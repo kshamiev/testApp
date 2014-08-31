@@ -1,0 +1,18 @@
+.next {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.prev {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.paginate {
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.ng-table-pager {
+    display: none;
+}

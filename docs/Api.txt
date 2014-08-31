@@ -1,0 +1,7 @@
+POST http://shamiev.ru/api/users/data
+{"EducationId":[23, 45, 665],"CitysId":[23, 45, 665],"Page":4}
+{"EducationId":[1],"CitysId":[],"Page":4}
+
+GET http://shamiev.ru/api/users/directory/citys
+GET http://shamiev.ru/api/users/directory/education
+

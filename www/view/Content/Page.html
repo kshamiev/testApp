@@ -1,0 +1,63 @@
+<h3 class="text-center">{$Name}</h3>
+{$Content}
+<div ng-controller="ControlPanel">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <table ng-table="tableParams" class="table table-striped table-bordered table-hover table-condensed">
+                <thead>
+                    <tr class="warning">
+                       <th>Пользователь</th>
+                       <th>Образование</th>
+                       <th>Город</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="u in tableData">
+                        <td>{{ u.UserName }}</td>
+                        <td>{{ u.EducationName }}</td>
+                        <td>{{ u.CityName }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="paginate">
+                <span ng-click="prevPage()" ng-if="noPrev()" class="prev"><button type="button" class="btn btn-link">предыдущая</button></span>
+                {{ currentPage }} / {{ totalPages }}
+                <span ng-click="nextPage()" ng-if="noNext()" class="next"><button type="button" class="btn btn-link">следующая</button></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="col-md-4 text-right">
+            <label>Образование</label>
+            <select class="form-control" ng-model="education" ng-change="addEducation()" ng-options="opt as opt.Name for opt in educationOptions"></select>
+            <br>
+            <div ng-repeat="education in educationSelect">
+                <label>{{ education.Name }}</label>
+                <button type="button" class="btn-xs btn-danger" ng-click="removeEducation($index)">X</button>
+            </div>
+        </div>
+
+        <div class="col-md-4 text-right">
+            <label>Город</label>
+            <select class="form-control" ng-model="city" ng-change="addCity()" ng-options="opt as opt.Name for opt in cityOptions"></select>
+            <br>
+            <div ng-repeat="city in citySelect">
+                <label>{{ city.Name }}</label>
+                <button type="button" class="btn-xs btn-danger" ng-click="removeCity($index)">X</button>
+            </div>
+        </div>
+        <div class="col-md-4 row">
+            <label>&nbsp;</label>
+            <div class="input-group"></div>
+            <button class="btn btn-primary btn-large" type="button" ng-click="getTableData()">Применить</button>
+            <span ng-if="sendParams">{{ sendParams }}</span>
+        </div>
+    </div>
+</div>
+<!-- Include application-->
+<script src="/assets/js/common/application.js"></script>
+<script src="/assets/js/common/services/constants.js"></script>
+<script src="/assets/js/common/controllers/controllers.js"></script>
+<script src="/assets/js/common/services/services.js"></script>
+<link href="/assets/css/application.css" rel="stylesheet"/>
