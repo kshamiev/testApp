@@ -19,7 +19,7 @@ class Www_Users extends Zero_Users
      */
     public static function DB_GetDirectoryCitys()
     {
-        $sql = "SELECT Id, Name FROM `Citys` ORDER BY 2";
+        $sql = "SELECT `Id`, `Name` FROM `Citys` ORDER BY 2";
         return Zero_DB::Sel_Array($sql);
     }
 
@@ -30,7 +30,7 @@ class Www_Users extends Zero_Users
      */
     public static function DB_GetDirectoryEducation()
     {
-        $sql = "SELECT Id, Name FROM `Education` ORDER BY 2";
+        $sql = "SELECT `Id`, `Name` FROM `Education` ORDER BY 2";
         return Zero_DB::Sel_Array($sql);
     }
 

@@ -33,9 +33,9 @@ return [
         //  Timeout online users status
         'UsersTimeoutOnline' => 600,
         //  Using a caching system
-        'IsCache' => false,
+        'IsCache' => true,
         //  Parsing the templates view
-        'TemplateParsing' => true,
+        'TemplateParsing' => false,
         //  Language of the site by default
         'Language' => "ru-ru",
         //  Domain of the site by default

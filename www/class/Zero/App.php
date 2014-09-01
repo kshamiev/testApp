@@ -264,7 +264,7 @@ class Zero_App
     public static function Execute()
     {
         // Search page
-        if  ( !isset(self::$Route->Route[self::$Route->Url]) )
+        if ( !isset(self::$Route->Route[self::$Route->Url]) )
             throw new Exception('Page Not Found', 404);
 
         //  Execute controller

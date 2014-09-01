@@ -55,7 +55,6 @@ class Zero_Session extends ArrayObject
         return self::$_Session;
     }
 
-
     /**
      * Set the default Zero_Session instance to a specified instance.
      *

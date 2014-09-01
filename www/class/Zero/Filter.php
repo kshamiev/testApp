@@ -99,7 +99,7 @@ class Zero_Filter
     /**
      * Sozdanie i initcializatciia fil`tra.
      *
-     * @param Zero_Model $Model  Delegirovannaia model` dlia kotoroi` sozdaiutsia fil`try`
+     * @param Zero_Model $Model Delegirovannaia model` dlia kotoroi` sozdaiutsia fil`try`
      */
     public function __construct($Model)
     {
@@ -117,7 +117,7 @@ class Zero_Filter
      */
     public static function Factory($Model)
     {
-//        $index = '_Filter' . '_' . $Model->Get_Source();
+        //        $index = '_Filter' . '_' . $Model->Get_Source();
         $index = '_Filter' . '_' . get_class($Model);
         if ( !$result = Zero_Session::Get($index) )
         {

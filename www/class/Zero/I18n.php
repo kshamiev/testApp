@@ -80,10 +80,12 @@ class Zero_I18n
     {
         return self::T($file_name, 'model', $key);
     }
+
     public static function View($file_name, $key)
     {
         return self::T($file_name, 'view', $key);
     }
+
     public static function Controller($file_name, $key)
     {
         return self::T($file_name, 'controller', $key);

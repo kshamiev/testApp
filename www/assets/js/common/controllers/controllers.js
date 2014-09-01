@@ -17,7 +17,7 @@ testApp.controller('ControlPanel', ['$scope', 'Server', '$http', 'API', 'ngTable
             total: $scope.tableData.length
         });
 
-        // загрузка табличных данных
+        // загрузка табличных данных (при пагинации и первичной загрузки)
         $scope.getTableData = function () {
             var postRequestData = {
                 EducationId: [],
@@ -38,10 +38,8 @@ testApp.controller('ControlPanel', ['$scope', 'Server', '$http', 'API', 'ngTable
                 postRequestData.Page = $scope.currentPage;
             }
             if (flag == 1) {
-                console.log(flag);
                 postRequestData.Page = 1;
                 flag = 0;
-                console.log(flag);
             }
             var request = Server.POST(API.dataUri, postRequestData);
             request.then(function (response) {
@@ -51,6 +49,12 @@ testApp.controller('ControlPanel', ['$scope', 'Server', '$http', 'API', 'ngTable
             });
         };
         $scope.getTableData();
+
+        // загрузка табличных данных (при применениии фильтра)
+        $scope.getTableDataFilter = function () {
+            if (1 == flag)
+                $scope.getTableData();
+        };
 
         // управление страницами
         $scope.nextPage = function () {
@@ -117,7 +121,6 @@ testApp.controller('ControlPanel', ['$scope', 'Server', '$http', 'API', 'ngTable
             //
             $scope.education = $scope.educationOptions[0];
             flag = 1;
-            console.log($scope.education)
         };
 
         // удаление образования из фильтра
@@ -129,7 +132,6 @@ testApp.controller('ControlPanel', ['$scope', 'Server', '$http', 'API', 'ngTable
             //
             $scope.education = $scope.educationOptions[0];
             flag = 1;
-            console.log(value)
         };
 
         $scope.citySelect = [];
@@ -162,7 +164,6 @@ testApp.controller('ControlPanel', ['$scope', 'Server', '$http', 'API', 'ngTable
             //
             $scope.city = $scope.cityOptions[0];
             flag = 1;
-            console.log($scope.city)
         };
 
         // удаление образования из фильтра
@@ -174,7 +175,6 @@ testApp.controller('ControlPanel', ['$scope', 'Server', '$http', 'API', 'ngTable
             //
             $scope.city = $scope.cityOptions[0];
             flag = 1;
-            console.log(value)
         };
 
     }]);

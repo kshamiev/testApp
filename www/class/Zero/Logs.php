@@ -92,6 +92,7 @@ class Zero_Logs
     {
         self::$_Message[] = [print_r($value, true), 'action'];
     }
+
     /**
      * Инициализация входиащего системного сообщения.
      *
@@ -101,6 +102,7 @@ class Zero_Logs
     {
         self::$_Message[] = [print_r($value, true), 'error'];
     }
+
     /**
      * Инициализация входиащего системного сообщения.
      *
@@ -110,6 +112,7 @@ class Zero_Logs
     {
         self::$_Message[] = [print_r($value, true), 'errorTrace'];
     }
+
     /**
      * Инициализация входиащего системного сообщения.
      *
@@ -119,6 +122,7 @@ class Zero_Logs
     {
         self::$_Message[] = [print_r($value, true), 'warning'];
     }
+
     /**
      * Инициализация входиащего системного сообщения.
      *
@@ -204,13 +208,13 @@ class Zero_Logs
             foreach (self::$_Message as $row)
             {
                 if ( 'error' == $row[1] )
-//                    $errors[] = str_replace(["\r", "\t"], " ", var_export($row[0], true));
+                    //                    $errors[] = str_replace(["\r", "\t"], " ", var_export($row[0], true));
                     $errors[] = str_replace(["\r", "\t"], " ", $row[0]);
                 else if ( 'warning' == $row[1] )
-//                    $warnings[] = str_replace(["\r", "\t"], " ", var_export($row[0], true));
+                    //                    $warnings[] = str_replace(["\r", "\t"], " ", var_export($row[0], true));
                     $warnings[] = str_replace(["\r", "\t"], " ", $row[0]);
                 else if ( 'notice' == $row[1] )
-//                    $warnings[] = str_replace(["\r", "\t"], " ", var_export($row[0], true));
+                    //                    $warnings[] = str_replace(["\r", "\t"], " ", var_export($row[0], true));
                     $notice[] = str_replace(["\r", "\t"], " ", $row[0]);
                 else if ( 'action' == $row[1] )
                     $action[] = $row[0];

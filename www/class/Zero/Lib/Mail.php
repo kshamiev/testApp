@@ -1,6 +1,7 @@
 <?php
 
 include_once(dirname(dirname(__DIR__)) . '/library/PHPMailer/class.phpmailer.php');
+
 /**
  * Lib. PHP email transport class
  *

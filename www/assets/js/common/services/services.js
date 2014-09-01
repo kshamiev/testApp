@@ -10,7 +10,7 @@ testApp.service('Server', ['$http', '$q', function ($http, $q) {
         subscribe[channel].push(func);
     };
     this.SubscribeEvent = function () {
-        if ( 0 == arguments.length || false == subscribe.hasOwnProperty(arguments[0])) {
+        if (0 == arguments.length || false == subscribe.hasOwnProperty(arguments[0])) {
             // TODO здесь нужно дописать обработчик ошибок
             return;
         }
