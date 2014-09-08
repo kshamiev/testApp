@@ -1,0 +1,46 @@
+<!doctype html>
+<html ng-app="JewerlyStyle">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="/assets/js/angular/angular.js"></script>
+    <script src="todo.js"></script>
+    <script src="/assets/js/common/services/services.js"></script>
+    <link rel="stylesheet" href="todo.css">
+</head>
+<body>
+<h2>Список дел</h2>
+<div ng-controller="TodoCtrl">
+    <span>Осталось {{remaining()}} из {{todos.length}}</span>
+    [ <a href="" ng-click="archive()">архив</a> ]
+    <ul class="unstyled">
+        <li ng-repeat="todo in todos">
+            <input type="checkbox" ng-model="todo.done">
+            <span class="done-{{todo.done}}">{{todo.text}}</span>
+        </li>
+    </ul>
+    <form ng-submit="addTodo()">
+        <input type="text" ng-model="todoText"  size="30" placeholder="впишите новое дело">
+        <input class="btn-primary" type="submit" value="добавить">
+    </form>
+    <br>
+    Пример двустороннего связывания данных: <span>{{todoText}}</span>
+    <br>
+    <br>
+    Другой пример двустороннего связывания данных:
+    <input type="checkbox" ng-model="qwerty"  size="30" placeholder="fffff">
+    <input type="checkbox" ng-model="qwerty"  size="30" placeholder="fffff">
+</div>
+
+<br>
+Область другого контроллера
+<br>
+<div ng-controller="TargetCtrl">
+
+    <font color="{{color}}">WWWWWWWWW WWWWWWWW</font><br>
+    <input type="button" value="{{controlEnterJob}}">
+    <br>
+    <input type="text" ng-model="controlEnterJob2"  size="200">
+
+</div>
+</body>
+</html>
