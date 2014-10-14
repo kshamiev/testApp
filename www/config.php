@@ -33,9 +33,9 @@ return [
         //  Timeout online users status
         'UsersTimeoutOnline' => 600,
         //  Using a caching system
-        'IsCache' => true,
+        'IsCache' => false,
         //  Parsing the templates view
-        'TemplateParsing' => false,
+        'TemplateParsing' => true,
         //  Language of the site by default
         'Language' => "ru-ru",
         //  Domain of the site by default
@@ -72,7 +72,7 @@ return [
             //  File
             'File' => true,
             //  Display
-            'Display' => false,
+            'Display' => true,
         ],
     ],
     //  Languages

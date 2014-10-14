@@ -56,6 +56,7 @@ class Zero_Route
      */
     public $Route = [
         '/' => 'Www_Content_Page',
+        '/test' => 'Www_Content_PageTest',
         '/api/users/data' => 'Www_Users_Api',
         '/api/users/directory/citys' => 'Www_Users_Api',
         '/api/users/directory/education' => 'Www_Users_Api',
